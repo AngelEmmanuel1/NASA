@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa Data Science</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+</head>
+<body>
+    <header> 
+        <a href="home.html" class="logo-container">
+            <img class="logo1" src="Pictures/earthdata-oaos-logo.png">
+            <img class="logo-hover" src="Pictures/earthdata-oaos-logo-hover.png">
+        </a>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="Images page.html">Commercial Data</a>    
+            <a href="Location Page.html">Earth-View</a>
+            <a href="Data.html">Data Resources</a>
+      
+        </nav> 
+    </header>
+    
+    <div id="content">
+        <h1>Storm Related Floods</h1>
+       The focus of our target area will be the rivers surrounding Daytona Beach Fl, and the Kennedy Space Center, Labeled on the map you will find where they are. 
+       The <b>Tomoka</b> River, <b> Mosquito</b> Lagoon <b> Banana</b> River and <b>Indian</b> River. <b>Storm related flooding</b> will be studied.
+    </div>
+    <div id="map-container">
+       
+        <div id="coordinates" >
+            Latitude: <input type="text" id="latitude"><br>
+            Longitude: <input type="text" id="longitude"><br>
+            <button onclick="performSearch()">Search</button>
+        </div>
+
+ <div id="map" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script>
+       var map = L.map('map').setView([51.505, -0.09], 11);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+
+    L.marker([29.2110, -81.0314]).addTo(map)
+    .bindPopup('Bethune Cookman University')
+    .openPopup();
+    
+    L.marker([28.5744, -80.6520]).addTo(map)
+    .bindPopup('Kennedy Space Center')
+    .openPopup();
+    L.marker([ 29.217, -81.108]).addTo(map)
+    .bindPopup('Tomoka River')
+    .openPopup();
+    L.marker([28.8361, -80.7990]).addTo(map)
+    .bindPopup('Mosquito Lagoon')
+    .openPopup();
+    L.marker([27.6948, -80.5438]).addTo(map)
+    .bindPopup('Indian River')
+    .openPopup();
+    L.marker([28.2674, -80.6345]).addTo(map)
+    .bindPopup('Banana River')
+    .openPopup();
+
+        function performSearch() {
+            const lat = parseFloat(document.getElementById('latitude').value);
+            const long = parseFloat(document.getElementById('longitude').value);
+
+      
+            map.setView([lat, long], 10);
+        }
+        var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
+    </script>
+    </div>
+ </div>
+</body>
+</html>

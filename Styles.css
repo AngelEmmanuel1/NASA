@@ -1,0 +1,190 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color: #0079C0;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-hover {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo-hover:hover ~ .logo1 {
+    display: none;
+}
+
+.logo-container:hover .logo-hover {
+    display: block;
+}
+
+nav {
+    text-align: center;
+    overflow: hidden;
+    margin: 0px 0px 10px 0px;
+    justify-content: center;
+    z-index: 1000; /* Ensure the navigation bar stays on top */
+
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+nav a:hover {
+    color: black;
+}
+
+#map-container {
+    position: fixed;
+    top: 60px; 
+    right: 0;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    margin: 20px 10px;
+}
+
+#content {
+    margin-right: 120px; 
+    margin-top: 60px; 
+    padding: 20px;
+    width: 500px;
+    font-size: 25px;
+}
+
+#coordinates {
+    position: fixed;
+    top: 100px;
+    right: 30px; 
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#map {
+    width: 500px;
+    height: 500px; /* Adjust the height as needed */
+    z-index: 2;
+    margin-top: 20px; /* Adjust to give space for coordinates */
+}
+li {
+    line-height: 1.5;
+    margin: 10px;
+}
+nav {
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+    justify-content: center;
+     
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+nav a:hover {
+    
+    color: black;
+}
+.btn-green-hero-button {
+    background-color: rgb(118, 243, 118);
+    font-size: 22px;
+    text-decoration: none;
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    outline: none; 
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3); 
+}
+
+.btn-green-hero-button a {
+    color: inherit; 
+    text-decoration: none; 
+}
+.weatherbox-start {
+    max-width: 100%;
+    margin: 20px auto; 
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 5px;
+}
+
+.news-card {
+    flex: 0 0 calc(23.9% - 30px); 
+    background-color: #2b5069;
+    border-top: 6px solid #a721ae;
+    overflow: hidden;
+    margin: 15px 0;
+    color: #fff;
+}
+
+.news-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.news-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.news-card p {
+    padding: 15px;
+    margin: 0;
+    font-size: 16px;
+}
+
+.news-card p:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+}
